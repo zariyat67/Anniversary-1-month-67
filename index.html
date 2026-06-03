@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 1 Month Anniversary ❤️</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+body{
+    background: linear-gradient(135deg,#ffd1dc,#ffc0cb);
+    overflow-x:hidden;
+    font-family: sans-serif;
+}
+
+.heart{
+    position:fixed;
+    bottom:-50px;
+    animation:floatUp linear forwards;
+    opacity:.9;
+    pointer-events:none;
+}
+
+@keyframes floatUp{
+    0%{transform:translateY(0) scale(.8); opacity:0;}
+    20%{opacity:1;}
+    100%{transform:translateY(-110vh) scale(1.4); opacity:0;}
+}
+
+.muah{
+    position:fixed;
+    font-size:20px;
+    color:#ff4d6d;
+    font-weight:bold;
+    animation:floatMuah 4s linear forwards;
+    pointer-events:none;
+}
+
+@keyframes floatMuah{
+    0%{transform:translateY(0); opacity:0;}
+    20%{opacity:1;}
+    100%{transform:translateY(-100vh); opacity:0;}
+}
+
+.fade-in{
+    animation:fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(10px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+.hidden{display:none;}
+</style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center p-4">
+
+<div class="bg-white/90 shadow-2xl rounded-3xl p-8 max-w-2xl text-center fade-in">
+
+<h1 class="text-4xl md:text-5xl font-extrabold text-pink-600 mb-6">
+Happy 1 Month Anniversary,<br> My Love ❤️
+</h1>
+
+<div class="text-4xl mb-6">💕 😘 💖 💌</div>
+
+<button onclick="celebrate()"
+class="mt-4 bg-pink-500 hover:bg-pink-600 text-white font-bold px-8 py-4 rounded-2xl shadow-xl text-lg transition transform hover:scale-105">
+
+Click for a Surprise 💕
+</button>
+
+<p id="speech" class="hidden mt-6 text-lg leading-relaxed text-gray-700 fade-in">
+Hello ml, today was the special day on which I finally got enough guts to confess my love for u 😛  
+I remember how my palms were sweating and my heart was pumping so fast...  
+
+I just wanted u to accept me, and when u did I was the happiest ever ♥️  
+
+It’s crazy how fast everything happened — 3.5 months as friends and now I can’t imagine life without u 🫶🏻  
+
+Every “I love u” or “I miss u” means everything to me ♥️  
+I just want to be better for u every single day.  
+
+I hope this 1 month turns into forever with u ♥️
+</p>
+
+<p class="mt-6 text-2xl font-bold text-pink-600">
+💕 You are the best gf ever 💕
+</p>
+
+</div>
+
+<script>
+function celebrate(){
+
+    // show speech
+    document.getElementById("speech").classList.remove("hidden");
+
+    // hearts
+    for(let i=0;i<60;i++){
+        setTimeout(()=>{
+            let heart=document.createElement("div");
+            heart.innerHTML="💖";
+            heart.className="heart";
+            heart.style.left=Math.random()*100+"vw";
+            heart.style.fontSize=(20+Math.random()*40)+"px";
+            heart.style.animationDuration=(3+Math.random()*3)+"s";
+            document.body.appendChild(heart);
+            setTimeout(()=>heart.remove(),8000);
+        }, i*70);
+    }
+
+    // muah kisses 😘💋
+    for(let i=0;i<25;i++){
+        setTimeout(()=>{
+            let muah=document.createElement("div");
+            muah.className="muah";
+            muah.innerHTML = Math.random() > 0.5 ? "muah 😘" : "💋";
+            muah.style.left=Math.random()*100+"vw";
+            muah.style.top=Math.random()*100+"vh";
+
+            document.body.appendChild(muah);
+
+            setTimeout(()=>muah.remove(),4000);
+        }, i*120);
+    }
+}
+</script>
+
+</body>
+</html>
